@@ -24,5 +24,8 @@ app.listen(process.env.PORT, () => {
 })
 
 app.use((err, req, res, next) => {
-    res.status(500).json({ error: 'Something went wrong' })
-})
+    console.error(err);
+    res.status(500).json({
+        error: err.message
+    });
+});
