@@ -23,6 +23,9 @@ app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)
 })
 
+app.use('/api/workout', require('./routes/workout'))
+
+
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({
