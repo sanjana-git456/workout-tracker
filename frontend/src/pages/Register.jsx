@@ -46,7 +46,7 @@ function Register() {
                 />
                 <button type="submit">Register</button>
             </form>
-            {error && <p stype={{ color: 'red' }}>{error}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
     )
 }
