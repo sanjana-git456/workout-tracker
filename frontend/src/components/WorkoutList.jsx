@@ -10,7 +10,7 @@ function WorkoutList() {
         const fetchWorkouts = async () => {
             try {
                 const token = localStorage.getItem('token')
-                const res = await axios.get('http://localhost:3000/api/workouts',
+                const res = await axios.get('http://localhost:3000/api/workout',
                     { headers: { Authorization: token }
                 })
                 setWorkouts(res.data)

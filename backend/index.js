@@ -13,7 +13,7 @@ app.use((req,res,next) => {
 })
 
 const authRoutes = require('./routes/auth')
-app.use('/api',authRoutes)
+app.use('/api/auth',authRoutes)
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGO_URI)
@@ -24,7 +24,6 @@ app.listen(process.env.PORT, () => {
 })
 
 app.use('/api/workout', require('./routes/workout'))
-
 
 app.use((err, req, res, next) => {
     console.error(err);

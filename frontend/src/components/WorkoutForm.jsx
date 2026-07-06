@@ -15,7 +15,7 @@ function WorkoutForm() {
         try {
             const token = localStorage.getItem('token')
             const res = await axios.post(
-                'http://localhost:3000/api/workouts',
+                'http://localhost:3000/api/workout',
                 { exercise, sets, reps, duration, date },
                 { headers: { Authorization: token } }
             )
