@@ -22,16 +22,16 @@ function WorkoutList() {
     }, [])
 
     const handleDelete = async (id) => {
-            try {
-                const token = localStorage.getItem('token')
-                await axios.delete(`http://localhost:3000/api/workouts/${id}`, {
-                    headers: { Authorization: token }
-                })
-                setWorkouts(workouts.filter(w => w._id !== id))
-            } catch (err) {
-                setError(err.response?.data?.error || 'Something went wrong')
-            }
+        try {
+            const token = localStorage.getItem('token')
+            await axios.delete(`http://localhost:3000/api/workouts/${id}`, {
+                headers: { Authorization: token }
+            })
+            setWorkouts(workouts.filter(w => w._id !== id))
+        } catch (err) {
+            setError(err.response?.data?.error || 'Something went wrong')
         }
+    }
     return (
         <div>
             <h1>Workout List</h1>
